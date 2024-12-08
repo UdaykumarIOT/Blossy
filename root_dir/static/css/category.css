@@ -1,0 +1,64 @@
+.category{
+    display:inline-block;
+    border: 2px solid rgb(96, 96, 96);
+    border-radius: 10px;
+    margin: 5px;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+    height: 260px;
+    box-shadow: 0 2px 11px 1px black;
+}
+
+.category img{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid rgb(118, 118, 118);
+}
+
+.category h2{
+    font-size: 28px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.category button{
+    background-color: rgb(255, 67, 42);
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.category a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@media screen and (max-width: 500px) {
+    .category img{
+        width: 60%;
+        height: 190px;
+        float: left;
+    }
+    .category{
+        display: block;
+        width: 97%;
+        height: 220px;
+        margin-bottom: 10px;
+    }
+    .category h2{
+        font-size: 30px;
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+
+}

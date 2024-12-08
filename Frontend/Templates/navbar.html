@@ -1,0 +1,47 @@
+<nav>
+  <div class="top-nav">
+  </div>
+  <div class="mid-nav">
+    <div class="brand_name">
+      blossy
+    </div>
+    <div class="search">
+        <datalist id="dl">
+          {% for item in items %}
+            <option value="{{ item.name }}">{{ item.name }}</option>
+          {% endfor %}
+        </datalist>
+        <form action="{% url 'products' %}" method="POST">
+        {% csrf_token %}
+        <input type="text" placeholder="Search..." list = "dl" name="searched_text">
+        <button type="submit"><i class="fa-solid fa-search"></i></button>
+        </form>
+    </div>
+    <ul class="icons">
+      <span class="group_icons">
+        <li><a href="{% url 'dashboard' %}"><i class="fa-solid fa-house"></i></a></li>
+        <li><a href="{% url 'profile' %}"><i class="fa-solid fa-user"></i></a></li>
+        <li><a href="{% url 'cart' %}"><i class="fa-solid fa-cart-shopping"></i></a></li>
+      </span>
+      <span class="bar" >
+        <li><a onclick="toggle('dropicons')" ><i class="fa-solid fa-bars"></i></a></li>
+        <div class="dropdown" id="dropicons">
+          <span class="icons3" >
+          <a href="{% url 'dashboard' %}"><i class="fa-solid fa-house"></i> Home</a>
+          <a href="{% url 'cart' %}"><i class="fa-solid fa-cart-shopping"></i> My Cart</a>
+          <a href="{% url 'profile' %}"><i class="fa-solid fa-user"></i> Profile</a>
+          </span>
+          <a href="{% url 'products' %}"><i class="fa-solid fa-box-open"></i> Products</a>
+          <a href="{% url 'categories' %}"><i class="fa-solid fa-layer-group"></i> Categories</a>
+          <a href="/admin/"><i class="fa-solid fa-user-secret"></i> Admin</a>
+          <a href="https://maps.app.goo.gl/FJgkXm8UWgtWv6Dq9"><i class="fa-solid fa-location-dot"></i> Shop Location</a>
+          <a href="{% url 'logout' %}"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+          
+      </div>
+      </span>
+    </ul>
+  </div>
+  <div class="bottom-nav">
+  </div>
+</nav>
+

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% load static %} 
+
+
+{% block csslink %}
+    <link rel="stylesheet" href= "{% static 'css/edit_profile.css' %}" >
+{% endblock csslink %}
+    
+
+{% block content %}
+        
+    <div class="container">
+        <form method="POST" enctype="multipart/form-data" >
+            {% csrf_token %}
+            <h1>Edit Profile</h1>
+            <div class="ip">
+                <input type="email" id="email" name="email" placeholder="email" value="{{user.email}}" required>
+            </div>
+            <div class="ip">
+                <input type="tel" id="tel" name="phone_number" placeholder="phone number" pattern="[0-9]{10}" value="{{ user.phone_number }}" required>
+            </div>
+            <div class="ip-age">
+                <input type="number" id="age" name="age" placeholder="age" min=0 max=100 value="{{ user.age }}" required>
+            </div>
+            <div class="ip-gender">
+                <select name=gender required>
+                    <option value="" {% if user.gender == "" %}selected{% endif %}>Select Gender</option>
+                    <option value="M" {% if user.gender == "M" %}selected{% endif %}>Male</option>
+                    <option value="F" {% if user.gender == "F" %}selected{% endif %}>Female</option>
+                    <option value="O" {% if user.gender == "O" %}selected{% endif %}>Other</option>
+                </select>
+            </div>
+            <div class="ip">
+                <textarea rows="2" cols="28" id="address" name="address" placeholder="address" required>{{ user.address }}</textarea>
+            </div>
+            <div class="ip">
+                <input type="file" id="dp" name="dp" accept="image/png, image/jpeg">
+            </div>
+            <button type="submit" id="btn" >Save</button>
+        </form>
+    </div>
+    <center>
+        <p>{{status}}</p>
+    </center>
+
+{% endblock content %}

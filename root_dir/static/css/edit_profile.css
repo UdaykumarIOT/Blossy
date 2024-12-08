@@ -1,0 +1,114 @@
+body{
+    background-color: white;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.container{
+    text-align: center;
+    margin:30px auto 40px auto;
+    padding:10px;
+    width: 350px;
+    border-radius: 20px;
+    box-shadow: 0 10px 36px black;
+}
+.ip{
+    margin:10px;
+    padding: 10px;
+}
+
+.ip input,textarea{
+    width:90%;
+    margin: 1px auto;
+    padding:5px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: hsl(0, 0%, 88%);
+}
+.ip-age{
+    display: inline;
+    margin-right: 24px;
+}
+.ip-age input{
+    width: 20%;
+    margin: 5px auto;
+    padding:5px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: hsl(0, 0%, 88%);
+}
+.ip-age input:hover{
+    border: 2px solid rgb(255, 85, 0);
+}
+.ip-gender{
+    display: inline;
+}
+.ip-gender select{
+    width: 50%;
+    margin: 5px auto;
+    padding:5px;
+    border-radius:10px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: hsl(0, 0%, 88%);
+}
+.ip-gender select:hover{
+    border: 2px solid rgb(255, 85, 0);
+}
+
+.ip input:hover{
+    border: 2px solid rgb(255, 85, 0);
+}
+.ip textarea:hover{
+    border: 2px solid rgb(255, 85, 0);
+}
+
+form h1{
+    margin:10px;
+    padding:10px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: hsl(0, 0%, 29%);
+}
+
+button{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding:6px 14px;
+    background-color: hsl(10, 100%, 54%);
+    color: hsl(0, 0%, 100%);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: hsl(15, 100%, 59%);
+}
+
+button:active{
+    padding: 4px 10px;
+    border-radius: 16px;
+}
+
+center p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: hsl(0, 100%, 64%);
+}
+
+#dp {
+    color:hsl(0, 100%, 58%);
+}
+
+@media screen and (max-width: 410px) {
+    .container{
+        width: 92%;
+        padding: 0px;
+    }
+}

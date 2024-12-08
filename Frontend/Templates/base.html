@@ -1,0 +1,39 @@
+{% load static %}
+
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blossy</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Matemasie&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href= "{% static 'css/base.css' %}">
+        {% block csslink %}
+        {% endblock %}
+        <script src="https://kit.fontawesome.com/ff5b793339.js" crossorigin="anonymous"></script>
+        {% block scripts %}
+        {% endblock %}
+        <script type="text/javascript">
+            function toggle(id){
+              var block = document.getElementById(id);
+              if (block.style.display == "none") {
+                block.style.display = "block";
+              } else {
+                block.style.display = "none";
+              }
+            }
+          </script>
+    </head>
+    <body>
+        {% include 'navbar.html' %}
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+    </body>
+</html>

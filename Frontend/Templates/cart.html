@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block csslink %}
+    <link rel="stylesheet" href="{% static 'css/products.css' %}">
+{% endblock csslink %}
+
+
+{% block content %}
+    {% for product in products %}
+    <div class="product">
+        {% if product.image %}
+            <img src="{{ product.image.url }}" alt="product image">
+        {% else %}
+            <img src="{% static 'assets/images/product-img.png' %}" alt="No product image">
+        {% endif %}
+        <span id="text_data">
+        <h2>{{ product.name }}</h2>
+        <p><span>₹{{ product.price }} </span><del>₹{{ product.MRP }} </del></p>
+        </span>
+    </div>
+    {% endfor %}
+    <div id="grandtotal">
+        <p>Grand Total</p>
+        <h2>₹{{ grand_total }}</h2>
+    </div>
+{% endblock content %}
+    
+    

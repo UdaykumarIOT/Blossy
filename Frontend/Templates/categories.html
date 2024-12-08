@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block csslink %}
+    <link rel="stylesheet" href="{% static 'css/category.css' %}">
+{% endblock csslink %}
+
+{% block content %}
+    {% for category in categories %}
+    <div class="category">
+        {% if category.image %}
+            <img src="{{ category.image.url }}" alt="category image">
+        {% else %}
+            <img src="{% static 'assets/images/product-img.png' %}" alt="No category image">
+        {% endif %}
+        <span id="text-block">
+            <h2>{{ category.name }}</h2>
+            <button ><a href="{% url 'category' category.id %}">View Products</a></button>
+        </span>
+    </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fancy_bazar-signin</title>
+        <link rel="stylesheet" href= "{% static 'css/signin.css' %}">
+        <style>
+            #username::placeholder{
+                color: {{ color1 }};
+            }
+            #password::placeholder{
+                color: {{ color2 }};
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <form method="POST" >
+                {% csrf_token %}
+                <h1>Sign In</h1>
+                <div class="ip">
+                    <input type="text" id="username" name="username" placeholder="username{{error1}}" value="{{name}}" required>
+                </div>
+                <div class="ip">
+                    <input type="password" id="password" name="password" placeholder="{{error2}}password" required >
+                </div>
+                <button type="submit" id="btn" >Login</button>
+            </form>
+            <div class="other">
+                <a href="" id="forget">Forgot Password?</a>
+                <a href="{% url 'signup' %}" id="signup">Sign Up</a>
+            </div>
+        </div>
+    </body>
+</html>

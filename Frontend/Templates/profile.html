@@ -1,0 +1,33 @@
+
+{% extends 'base.html' %}
+{% load static %}
+ 
+{% block csslink %}
+    <link rel="stylesheet" href= "{% static 'css/profile.css' %}" >
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <h1>Profile</h1>
+        <div class="profile-img">
+            {% if user.dp %}
+                <img src="{{ user.dp.url }}" alt="Profile Image">
+            {% else %}
+                <img src="{% static 'assets/images/profile-img.png' %}" alt="Profile Image">
+            {% endif %}
+        </div>
+        <div class="profile">
+            <h1>{{ user.username }}</h1>
+            <p>Email: <span class="data">{{ user.email }}<span></p>
+            <p>Phone: <span class="data">{{ user.phone_number }}<span></p>
+            <p>Age: <span class="data">{{ user.age }}<span></p>
+            <p>Gender: <span class="data">{{ user.gender }}<span></p>
+            <p>Address: <span class="data">{{ user.address }}<span></p>
+        </div>
+    </div>
+    <center>
+    <button><a href="{% url 'edit_profile' %}" >Edit Profile<a></button>
+    </center>
+
+{% endblock %}

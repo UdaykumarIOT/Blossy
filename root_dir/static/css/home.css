@@ -1,0 +1,15 @@
+main{
+    background-image: url('../assets/images/home-bg2.avif');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px;
+    min-height: 100vh;
+}
+h1{
+    font-family: "Matemasie", sans-serif;
+    font-weight: 600;
+    font-size: 8vh;
+    color: rgb(255, 81, 0);
+    text-shadow: 6px 6px 8px black;
+}
