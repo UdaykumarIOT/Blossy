@@ -6,14 +6,14 @@
       blossy
     </div>
     <div class="search">
+        <form action="{% url 'products' %}" method="POST">
+        {% csrf_token %}
+        <input type="text" placeholder="Search..." list = "dl" name="searched_text">
         <datalist id="dl">
           {% for item in items %}
             <option value="{{ item.name }}">
           {% endfor %}
         </datalist>
-        <form action="{% url 'products' %}" method="POST">
-        {% csrf_token %}
-        <input type="text" placeholder="Search..." list = "dl" name="searched_text">
         <button type="submit"><i class="fa-solid fa-search"></i></button>
         </form>
     </div>
