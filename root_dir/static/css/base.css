@@ -4,7 +4,7 @@ nav {
 
 .brand_name {
     display: inline;
-    font-size: 26px;
+    font-size: 30px;
     font-weight: bold;
     color: hsl(0, 0%, 100%);
     margin-left: 20px;
@@ -18,14 +18,14 @@ form{
 
 .search {
     display: inline;
-    margin-left: 10px;
+    margin-left: 20px;
 }
 .icons {
     display: inline;
     position: absolute;
-    right: 0;
-    margin-top: 12px;
-    margin-bottom: 10px;
+    right: 10px;
+    margin-top: 16px;
+    margin-bottom: 5px;
 }
 .icons li {
     display: inline-block;
@@ -37,10 +37,10 @@ form{
     text-decoration: none;
 }
 .mid-nav {
-    height: 50px;
+    height: 60px;
 }
 .search input,button {
-    margin-top: 10px;
+    margin-top: 3px;
 }
 
 .search input {
@@ -69,8 +69,8 @@ form{
     display: none;
     position : absolute;
     right: 6px;
-    top: 40px;
-    width: 150px;
+    top: 45px;
+    width: 220px;
     border-radius: 7px;
     background-color: hsl(0, 0%, 100%);
     padding: 10px;
@@ -97,8 +97,10 @@ form{
 .icons3 {
     display: none;
 }
-
-@media screen and (max-width: 545px) {
+#bar_icon{
+    font-size: 18px;
+}
+@media screen and (max-width: 600px) {
     .group_icons {
         display: none;
     }
@@ -106,10 +108,13 @@ form{
         display: inline-block;
     }
     .search input{
-        width: 200px;
+        width: 48%;
     }
     .icons3{
         display: block;
+    }
+    #bar_icon{
+        font-size: 20px;
     }
 }
 
@@ -118,10 +123,15 @@ form{
         height: 100px;
     }
     .search input{
-        margin-left: 10px;
+        margin-left: 5px;
         width: 70%;
+        margin-top: 10px;
     }
     .brand_name{
         display: block;
+        margin-left: 30px;
+    }
+    #bar_icon{
+        font-size: 22px;
     }
 }
