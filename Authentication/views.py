@@ -59,6 +59,7 @@ class signup(View):
             'status':'Oops! Something went wrong. Please try again.',
             'data':request.POST
         }
+        #print(form.errors)
         return render(request,'signup.html',context)
 
 class dashboard(View):
